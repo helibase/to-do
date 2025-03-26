@@ -1,14 +1,13 @@
 import logging
 from gunicorn.app.base import BaseApplication
-from app_init import app
-
-# IMPORT ALL ROUTES
-from routes import *
+from app_init import create_app
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Crear la aplicación usando el patrón de fábrica
+app = create_app()
 
 class StandaloneApplication(BaseApplication):
     def __init__(self, app, options=None):
