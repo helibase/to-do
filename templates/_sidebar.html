@@ -15,7 +15,7 @@
 
         <p class="menu-label">Menu</p>
         <nav class="nav flex-column mb-4">
-            <a class="nav-link {% if request.endpoint == 'profile_route' %}active{% endif %}" href="{{ url_for('profile_route') }}">
+            <a class="nav-link {% if request.endpoint == 'routes.profile_route' %}active{% endif %}" href="{{ url_for('routes.profile_route') }}">
                 <i class="fas fa-user"></i> Profile
             </a>
             <a href="{{ url_for('auth.logout') }}" class="nav-link" onclick="return confirm('¿Estás seguro que deseas cerrar sesión?');">

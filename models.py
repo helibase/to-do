@@ -12,7 +12,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    
+    profile_picture = db.Column(db.String(255), nullable=True)  # Agregado para compatibilidad con _sidebar.html
+
     # Relación con las tareas (un usuario puede tener muchas tareas)
     tasks = db.relationship('Task', backref='owner', lazy='dynamic', cascade='all, delete-orphan')
 

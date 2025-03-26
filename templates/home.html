@@ -30,7 +30,7 @@
                     </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{{ url_for('profile_route') }}" class="btn-sam">Mi Perfil</a>
+                        <a href="{{ url_for('routes.profile_route') }}" class="btn-sam">Mi Perfil</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -54,7 +54,7 @@
                     <p class="lead">Gestiona tus tareas de manera eficiente con nuestra aplicación intuitiva</p>
                     <div class="hero-cta">
                         {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('profile_route') }}" class="btn-sam">Mi Perfil</a>
+                        <a href="{{ url_for('routes.profile_route') }}" class="btn-sam">Mi Perfil</a>
                         <a href="#features" class="btn-sam-secondary">Aprende Más</a>
                         {% else %}
                         <a href="{{ url_for('auth.register') }}" class="btn-sam">Comienza Gratis</a>

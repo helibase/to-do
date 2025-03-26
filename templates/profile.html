@@ -18,7 +18,7 @@
                 <div class="col-md-4">
                     <div class="task-form-container">
                         <h2 class="mb-4">Crear Nueva Tarea</h2>
-                        <form method="POST" action="{{ url_for('profile_route') }}">
+                        <form method="POST" action="{{ url_for('routes.profile_route') }}">
                             <input type="hidden" name="action" value="create_task">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Título de la Tarea</label>
@@ -53,7 +53,7 @@
                                             {% endif %}
                                         </div>
                                         <div class="task-actions">
-                                            <form method="POST" action="{{ url_for('profile_route') }}" class="d-inline">
+                                            <form method="POST" action="{{ url_for('routes.profile_route') }}" class="d-inline">
                                                 <input type="hidden" name="action" value="update_task_status">
                                                 <input type="hidden" name="task_id" value="{{ task.id }}">
                                                 <input type="hidden" name="is_completed" value="{{ 'false' if task.is_completed else 'true' }}">
@@ -61,7 +61,7 @@
                                                     <i class="fas {{ 'fa-check' if not task.is_completed else 'fa-undo' }}"></i>
                                                 </button>
                                             </form>
-                                            <form method="POST" action="{{ url_for('profile_route') }}" class="d-inline ml-2">
+                                            <form method="POST" action="{{ url_for('routes.profile_route') }}" class="d-inline ml-2">
                                                 <input type="hidden" name="action" value="delete_task">
                                                 <input type="hidden" name="task_id" value="{{ task.id }}">
                                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta tarea?');">
